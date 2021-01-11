@@ -15,7 +15,7 @@ RUN set -ex; apk upgrade; apk add --no-cache --no-progress bash tzdata busybox-e
         echo ${TZ} > /etc/timezone; \
         rm -rf /var/cache/apk/*;
 
-COPY --from=builder helloworld/jd_seckill /usr/local/bin/jd_seckill
+COPY --from=builder go/bin/jd_seckill /usr/local/bin/jd_seckill
 
 WORKDIR /app
 
